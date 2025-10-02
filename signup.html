@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Signup</h1>
+    <form id="signup-form">
+      <input type="text" id="firstname-input" placeholder="Firstname">
+      <input type="email" id="signup-email" placeholder="Email">
+      <div class="password-container">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button type="button" class="show-hide-btn" data-target="signup-password">Show</button>
+      </div>
+      <div class="password-container">
+        <input type="password" id="signup-repeat" placeholder="Repeat Password">
+        <button type="button" class="show-hide-btn" data-target="signup-repeat">Show</button>
+      </div>
+      <p id="error-message"></p>
+      <button type="submit">Signup</button>
+    </form>
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Footer</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Footer base */
+    .footer {
+        background: linear-gradient(135deg, #673de6, #531df7);
+        color: #fff;
+        padding: 60px 20px 30px 20px;
+        width: 100%;
+    }
+
+    .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        gap: 30px;
+    }
+
+    .footer-col {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+    }
+
+    .footer-col h4::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: #ffdd57;
+        border-radius: 2px;
+    }
+
+    .footer-col p {
+        color: #e0e0e0;
+        margin-bottom: 10px;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+
+    .footer-col .links {
+        list-style: none;
+        margin-top: 10px;
+        padding: 0; 
+    }
+
+    .footer-col .links li {
+        margin-bottom: 10px;
+    }
+
+    .footer-col .links li a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 14px;
+        color: #fff;
+        border-top: 1px solid rgba(255,255,255,0.3);
+        padding-top: 15px;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+        .footer-row {
+            flex-direction: column; /* Columns Stack vertically */
+            text-align: center;
+            gap: 30px;
+        }
+
+        .footer-col {
+            min-width: 100%; /* Full width for mobile */
+        }
+
+        .footer-col h4::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .footer-col p, .footer-col .links li a {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<section class="footer">
+  <div class="footer-row">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>We provide top-notch web hosting services that are fast, secure, and reliable. Your satisfaction is our priority.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="links">
+        <li><a href="#orders">Order Hosting</a></li>
+        <li><a href="#customer-reviews">Customer Reviews</a></li>
+        <li><a href="#internships">Apply for Internships</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Email: support@hostinger.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Address: 123, Web Hosting Street, Mumbai, India</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Hostinger Prototype. All Rights Reserved.
+  </div>
+</section>
+
+</body>
+</html>

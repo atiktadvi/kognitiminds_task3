@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostinger Prototype</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-left">Hostinger Prototype</div>
+      <i class='bx bx-menu menu-toggle'></i>
+      <div class="navbar-right">
+        <a href="#review">Customer Reviews</a>
+        <a href="#internships">Apply for Internships</a>
+        <a href="#orders">My Orders</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="index.html">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <div class="h-features-header__info-wrapper">
+    <div class="h-features-header__heading-wrapper">
+      <div class="header__overline-wrapper">
+        Up to <span class="header__overline-discount">75%</span> off Web hosting
+      </div>
+      <h2 class="header__heading">Web hosting as it should be: Fast and secure</h2>
+      <div class="header__list">
+        <span class="header__list-item">✔ Free domain and website migration</span>
+        <span class="header__list-item">✔ Run WordPress or any other CMS</span>
+        <span class="header__list-item">✔ Fully Managed Web Hosting</span>
+        <span class="header__list-item">✔ 24/7 customer support</span>
+        <span class="header__list-item">✔ 30-day money-back guarantee</span>
+      </div>
+      <div class="h-features-header__button-wrapper">
+        <a href="#">Start now</a>
+      </div>
+    </div>
+    <div class="h-header-image">
+      <img src="pic1.png" alt="Feature Image">
+    </div>
+  </div>
+
+
+  <!-- ORDER SECTION -->
+<!-- ORDER SECTION -->
+<div id="orders">
+  <div  class="hostinger-container">
+    <h2 class="hostinger-title">Order Your Hosting Service</h2>
+    <br>
+    <div class="hostinger-tabs">
+      <button class="hostinger-tab-btn active" data-tab="hostinger-place-order">Order Hosting</button>
+      <button class="hostinger-tab-btn" data-tab="hostinger-my-orders">My Orders</button>
+      <button class="hostinger-tab-btn" data-tab="hostinger-track-order">Track Order</button>
+    </div>
+
+    <!-- PLACE ORDER -->
+    <div id="hostinger-place-order" class="hostinger-tab-content active">
+      <form id="hostingerOrderForm">
+        <label for="hostingerName" class="hostinger-label">Name</label>
+        <input type="text" id="hostingerName" class="hostinger-input" required placeholder="Your Name">
+
+        <label for="hostingerPhone" class="hostinger-label">Phone</label>
+        <input type="text" id="hostingerPhone" class="hostinger-input" required placeholder="+91 98765 43210">
+
+        <label for="hostingerService" class="hostinger-label">Select Hosting Service</label>
+        <select id="hostingerService" class="hostinger-select" required>
+          <option value="">--Choose Service--</option>
+          <option value="Shared Hosting">Shared Hosting</option>
+          <option value="VPS Hosting">VPS Hosting</option>
+          <option value="WordPress Hosting">WordPress Hosting</option>
+          <option value="Email Hosting">Email Hosting</option>
+          <option value="Domain Registration">Domain Registration</option>
+        </select>
+
+        <label for="hostingerAddress" class="hostinger-label">Email / Account Details</label>
+        <textarea id="hostingerAddress" class="hostinger-textarea" placeholder="Your email or account details" required></textarea>
+
+        <button type="submit" class="hostinger-btn">Place Order</button>
+        <p class="hostinger-success-msg" id="hostingerSuccessMsg"></p>
+      </form>
+    </div>
+
+    <!-- MY ORDERS -->
+    <div id="hostinger-my-orders" class="hostinger-tab-content">
+      <h2 class="hostinger-title">My Hosting Orders</h2>
+      <div id="hostingerOrdersList"></div>
+    </div>
+
+    <!-- TRACK ORDER -->
+    <div id="hostinger-track-order" class="hostinger-tab-content">
+      <h2 class="hostinger-title">Track Your Hosting Order</h2>
+      <input type="text" id="hostingerOrderIdInput" class="hostinger-input" placeholder="Enter your Order ID">
+      <button class="hostinger-btn" onclick="hostingerTrackOrder()">Check Status</button>
+      <div class="hostinger-result" id="hostingerResult"></div>
+    </div>
+  </div>
+
+
+  <!-- Testimonial Slider -->
+  <div id="review" class="cr-container">
+    <section id="customer-reviews" class="reviews-heading">
+      <div class="testimonial mySwiper">
+        <h2 class="cr-container-h2">Customer Reviews</h2>
+        <div class="swiper-wrapper">
+
+          <div class="slide swiper-slide">
+            <p>"Service was excellent and very professional. I am really satisfied with the quick response and clean work."</p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details"><span class="name">– Rahul Sharma</span></div>
+          </div>
+
+          <div class="slide swiper-slide">
+            <p>"Very reliable and affordable. The team was polite and finished the work on time. Highly recommended!"</p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details"><span class="name">– Priya Verma</span></div>
+          </div>
+
+          <div class="slide swiper-slide">
+            <p>"Great experience overall! Booking process was smooth and the service quality exceeded my expectations."</p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details"><span class="name">– Arjun Singh</span></div>
+          </div>
+
+          <div class="slide swiper-slide">
+            <p>"Prompt service and transparent pricing. It’s good to see such trustworthy service providers."</p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details"><span class="name">– Neha Patel</span></div>
+          </div>
+
+          <div class="slide swiper-slide">
+            <p>"I loved how quickly the issue was solved. Will definitely use this service again in the future."</p>
+            <i class="bx bxs-quote-alt-left quote-icon"></i>
+            <div class="details"><span class="name">– Aman Khan</span></div>
+          </div>
+
+        </div>
+
+        <div class="swiper-button-next nav-btn"></div>
+        <div class="swiper-button-prev nav-btn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!-- Init Swiper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        loop: true,
+        grabCursor: true,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        autoplay: { delay: 4000, disableOnInteraction: false }
+      });
+    });
+  </script>
+
+
+  <!-- Apply for Internships Section -->
+<div>
+  <section id="internships" class="internship-form"
+    style="padding: 60px 20px; text-align: center; background-color: #f5f5f5;">
+    <h2 style="font-size: 32px; margin-bottom: 20px; color: #673de6;">Apply for Internships</h2>
+    <p style="font-size: 16px; margin-bottom: 30px; color: #1d1e20;">Fill the form below to apply for our internship
+      program.</p>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfFBH4gW_oI3AQHaodalzy1sB48tJDGc8A0VBtIFyzJDHrWrA/viewform?embedded=true"
+      width="100%" height="480px" frameborder="0" marginheight="0" marginwidth="0"
+      style="max-width: 800px; border-radius: 12px;">
+      Loading…
+    </iframe>
+  </section>
+</div>
+
+  <!-- CONTACT US SECTION -->
+  <section id="contact-us" class="contact-section">
+    <div class="contact-intro">
+      <h2 class="contact-title">Contact Us</h2>
+      <br>
+      <p class="contact-description">
+        Fill out the form below and we'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <form id="contact-form" class="contact-form">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+      <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+      <input type="hidden" name="from_name" value="My Website" />
+
+      <div class="form-group-container">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" name="name" class="form-input" placeholder="Your name" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" class="form-input" placeholder="Your email" type="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Your message" required></textarea>
+        </div>
+      </div>
+      <button class="form-submit" type="submit">Send Message</button>
+      <p id="form-message" style="margin-top:10px; color:#673de6; font-weight:600;"></p>
+    </form>
+  </section>
+
+ <section class="footer">
+  <div class="footer-row">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>We provide top-notch web hosting services that are fast, secure, and reliable. Your satisfaction is our priority.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="links">
+        <li><a href="#orders">Order Hosting</a></li>
+        <li><a href="#customer-reviews">Customer Reviews</a></li>
+        <li><a href="#internships">Apply for Internships</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Email: support@hostinger.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Address: 123, Web Hosting Street, Mumbai, India</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Hostinger Prototype. All Rights Reserved.
+  </div>
+</section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hostingerTabs = document.querySelectorAll('.hostinger-tab-btn');
+      const hostingerContents = document.querySelectorAll('.hostinger-tab-content');
+
+      hostingerTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          hostingerTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          hostingerContents.forEach(c => c.classList.remove('active'));
+          document.getElementById(tab.dataset.tab).classList.add('active');
+          if (tab.dataset.tab === 'hostinger-my-orders') hostingerLoadOrders();
+        });
+      });
+
+      const hostingerOrderForm = document.getElementById('hostingerOrderForm');
+      hostingerOrderForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('hostingerName').value;
+        const phone = document.getElementById('hostingerPhone').value;
+        const service = document.getElementById('hostingerService').value;
+        const address = document.getElementById('hostingerAddress').value;
+
+        const orderId = 'HST' + Math.floor(Math.random() * 100000);
+        const status = 'Pending';
+        const order = { orderId, name, phone, service, address, status, date: new Date().toLocaleString() };
+
+        let orders = JSON.parse(localStorage.getItem('hostingerOrders')) || [];
+        orders.push(order);
+        localStorage.setItem('hostingerOrders', JSON.stringify(orders));
+
+        document.getElementById('hostingerSuccessMsg').innerText = `Order Placed Successfully! Your Order ID: ${orderId}`;
+        hostingerOrderForm.reset();
+      });
+
+      function hostingerLoadOrders() {
+        const ordersList = document.getElementById('hostingerOrdersList');
+        const orders = JSON.parse(localStorage.getItem('hostingerOrders')) || [];
+        if (orders.length === 0) {
+          ordersList.innerHTML = '<p>No hosting orders found.</p>';
+        } else {
+          ordersList.innerHTML = '';
+          orders.forEach(o => {
+            ordersList.innerHTML += `<div class="hostinger-order">
+                  <h3>${o.service} - ${o.orderId}</h3>
+                  <p><strong>Name:</strong> ${o.name}</p>
+                  <p><strong>Phone:</strong> ${o.phone}</p>
+                  <p><strong>Email/Account:</strong> ${o.address}</p>
+                  <p><strong>Status:</strong> ${o.status}</p>
+                  <p><strong>Date:</strong> ${o.date}</p>
+                  </div>`;
+          });
+        }
+      }
+
+      window.hostingerLoadOrders = hostingerLoadOrders;
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      window.hostingerTrackOrder = function () {
+        const orderId = document.getElementById('hostingerOrderIdInput').value.trim();
+        const orders = JSON.parse(localStorage.getItem('hostingerOrders')) || [];
+        const order = orders.find(o => o.orderId === orderId);
+        const resultDiv = document.getElementById('hostingerResult');
+        if (order) {
+          resultDiv.innerHTML = `<p><strong>Service:</strong> ${order.service}</p>
+              <p><strong>Status:</strong> ${order.status}</p>
+              <p><strong>Name:</strong> ${order.name}</p>
+              <p><strong>Phone:</strong> ${order.phone}</p>
+              <p><strong>Email/Account:</strong> ${order.address}</p>`;
+        } else {
+          resultDiv.innerHTML = '<p style="color:red;">Order not found.</p>';
+        }
+      }
+    });
+
+    // NAVBAR
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbarLinks = document.querySelector('.navbar-right');
+
+    menuToggle.addEventListener('click', () => {
+      navbarLinks.classList.toggle('active');
+    });
+
+  </script>
+  <script src="auth.js"></script>
+</body>
+
+</html>
